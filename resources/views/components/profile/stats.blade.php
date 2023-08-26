@@ -13,7 +13,7 @@
                 <i class="fa-solid fa-bars"></i>
             </span>
             <div class="flex flex-col gap-0">
-                <span class="text-slate-500 text-sm">Total discussions</span>
+                <span class="text-slate-500 text-sm">{{ trans('forumium.total_discussions') }}</span>
                 <span class="text-slate-700 text-lg font-medium">{{ $discussions }}</span>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <i class="fa-regular fa-comment"></i>
             </span>
             <div class="flex flex-col gap-0">
-                <span class="text-slate-500 text-sm">Total replies</span>
+                <span class="text-slate-500 text-sm">{{ trans('forumium.total_replies') }}</span>
                 <span class="text-slate-700 text-lg font-medium">{{ $replies }}</span>
             </div>
         </div>
@@ -37,7 +37,7 @@
                 <i class="fa-regular fa-comments"></i>
             </span>
             <div class="flex flex-col gap-0">
-                <span class="text-slate-500 text-sm">Total comments</span>
+                <span class="text-slate-500 text-sm">{{ trans('forumium.total_comments') }}</span>
                 <span class="text-slate-700 text-lg font-medium">{{ $comments }}</span>
             </div>
         </div>
@@ -49,7 +49,7 @@
                 <i class="fa-regular fa-thumbs-up"></i>
             </span>
             <div class="flex flex-col gap-0">
-                <span class="text-slate-500 text-sm">Total likes</span>
+                <span class="text-slate-500 text-sm">{{ trans('forumium.total_likes') }}</span>
                 <span class="text-slate-700 text-lg font-medium">{{ $likes }}</span>
             </div>
         </div>
@@ -62,7 +62,7 @@
                 <i class="fa-solid fa-star"></i>
             </span>
                 <div class="flex flex-col gap-0">
-                    <span class="text-slate-500 text-sm">Total following discussions</span>
+                    <span class="text-slate-500 text-sm">{{ trans('forumium.total_following_discussions') }}</span>
                     <span class="text-slate-700 text-lg font-medium">{{ $followingDiscussions }}</span>
                 </div>
             </div>
@@ -74,7 +74,7 @@
                 <i class="fa-regular fa-star"></i>
             </span>
                 <div class="flex flex-col gap-0">
-                    <span class="text-slate-500 text-sm">Total Not following discussions</span>
+                    <span class="text-slate-500 text-sm">{{ trans('forumium.total_not_following_discussions') }}</span>
                     <span class="text-slate-700 text-lg font-medium">{{ $notFollowingDiscussions }}</span>
                 </div>
             </div>
@@ -86,7 +86,7 @@
                 <i class="fa-regular fa-eye-slash"></i>
             </span>
                 <div class="flex flex-col gap-0">
-                    <span class="text-slate-500 text-sm">Total ignoring discussions</span>
+                    <span class="text-slate-500 text-sm">{{ trans('forumium.total_ignoring_discussions') }}</span>
                     <span class="text-slate-700 text-lg font-medium">{{ $ignoringDiscussions }}</span>
                 </div>
             </div>

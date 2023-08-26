@@ -30,22 +30,22 @@ class Register extends Component implements HasForms
     {
         return [
             TextInput::make('name')
-                ->label('Full name')
+                ->label(trans('forumium.full_name'))
                 ->required(),
 
             TextInput::make('email')
-                ->label('Email address')
+                ->label(trans('forumium.email_address'))
                 ->email()
                 ->unique(table: User::class, column: 'email')
                 ->required(),
 
             Password::make('password')
-                ->label('Password')
+                ->label(trans('forumium.password'))
                 ->confirmed()
                 ->required(),
 
             Password::make('password_confirmation')
-                ->label('Password confirmation')
+                ->label(trans('forumium.password_confirmation'))
                 ->required(),
         ];
     }

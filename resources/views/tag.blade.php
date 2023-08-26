@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-slot name="title">Tag - {{ $tag->name }}</x-slot>
+    <x-slot name="title">{{ trans('forumium.tag') }} - {{ $tag->name }}</x-slot>
 
     <div class="w-full min-h-[150px] flex flex-row justify-center items-center lg:px-0 px-6" style="background-color: {{ $tag->color }}CC">
         <div class="container flex flex-col justify-center items-center gap-3 text-white text-center text-lg">

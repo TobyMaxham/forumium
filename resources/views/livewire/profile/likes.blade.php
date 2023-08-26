@@ -1,9 +1,9 @@
 <div class="w-full flex flex-col">
     <div class="text-slate-700 text-lg flex items-center gap-2">
         @if(auth()->user()->id == $user->id)
-            Your likes
+            {{ trans('forumium.your_likes') }}
         @else
-            Likes
+            {{ trans_choice('forumium.likes', 2) }}
         @endif
         <div wire:loading><i class="fa fa-spinner fa-spin"></i></div>
     </div>

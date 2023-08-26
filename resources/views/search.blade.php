@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-slot name="title">Search - {{ request('q') }}</x-slot>
+    <x-slot name="title">{{ trans('forumium.search') }} - {{ request('q') }}</x-slot>
 
     <!-- Page content -->
     <div class="w-full flex justify-center items-center px-2 sm:px-4 py-10">

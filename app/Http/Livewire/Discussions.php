@@ -49,10 +49,10 @@ class Discussions extends Component implements HasForms
                         ->disableLabel()
                         ->disablePlaceholderSelection()
                         ->options([
-                            'latest' => 'Latest',
-                            'oldest' => 'Oldest',
-                            'trending' => 'Trending',
-                            'most-liked' => 'Most liked',
+                            'latest' => trans('forumium.latest'),
+                            'oldest' => trans('forumium.oldest'),
+                            'trending' => trans('forumium.trending'),
+                            'most-liked' => trans('forumium.most_liked'),
                         ])
                         ->columnSpan([
                             12,
@@ -89,23 +89,23 @@ class Discussions extends Component implements HasForms
         switch ($sort) {
             case 'oldest':
                 $query->orderBy('created_at', 'asc');
-                $this->selectedSort = 'Oldest discussions';
+                $this->selectedSort = trans('forumium.oldest_discussions');
                 break;
             case 'trending':
                 $query->orderBy('unique_visits', 'desc')
                     ->orderBy('created_at', 'desc');
-                $this->selectedSort = 'Trending discussions';
+                $this->selectedSort = trans('forumium.trending_discussions');
                 break;
             case 'most-liked':
                 $query->withCount('likes')
                     ->orderBy('likes_count', 'desc')
                     ->orderBy('created_at', 'desc');
-                $this->selectedSort = 'Most liked discussions';
+                $this->selectedSort = trans('forumium.most_liked_discussions');
                 break;
             case 'latest':
             default:
                 $query->orderBy('created_at', 'desc');
-                $this->selectedSort = 'Latest discussions';
+                $this->selectedSort = trans('forumium.latest_discussions');
                 break;
         }
 

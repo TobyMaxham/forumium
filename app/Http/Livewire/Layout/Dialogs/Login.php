@@ -36,17 +36,17 @@ class Login extends Component implements HasForms
     {
         return [
             TextInput::make('email')
-                ->label('Email address')
+                ->label(trans('forumium.email_address'))
                 ->email()
                 ->required(),
 
             Password::make('password')
-                ->label('Password')
+                ->label(trans('forumium.password'))
                 ->visible(fn() => !$this->forgotPassword)
                 ->required(),
 
             Checkbox::make('remember')
-                ->label('Remember me')
+                ->label(trans('forumium.remember_me'))
                 ->visible(fn() => !$this->forgotPassword),
         ];
     }

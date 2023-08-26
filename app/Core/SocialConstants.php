@@ -2,6 +2,8 @@
 
 namespace App\Core;
 
+use App\Helpers\SocialIntegration;
+
 enum SocialConstants: string
 {
 
@@ -9,8 +11,6 @@ enum SocialConstants: string
     case GITHUB = "github";
     case GOOGLE = "google";
     case TWITTER = "twitter";
-
-    case ENABLED_SOCIALS = "facebook,github,google";
 
     public static function color(string $name)
     {
@@ -24,8 +24,7 @@ enum SocialConstants: string
 
     public static function isEnabled(string $name)
     {
-        $enabledSocials = explode(',', self::ENABLED_SOCIALS->value);
-        return in_array($name, $enabledSocials);
+        return SocialIntegration::enablesSocials()->contains($name);
     }
 
     public static function enabledCases()

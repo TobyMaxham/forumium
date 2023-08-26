@@ -16,11 +16,11 @@
                     <i class="fa-regular fa-clock"></i> {{ $discussion->updated_at->diffForHumans() }}
                 </span>
                 <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
-                    <i class="fa-regular fa-message"></i> Created {{ $discussion->created_at->diffForHumans() }}
+                    <i class="fa-regular fa-message"></i> {{ trans('forumium.created') }} {{ $discussion->created_at->diffForHumans() }}
                 </span>
                 @if($isResolved)
                     <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
-                        <i class="fa-solid fa-check"></i> Resolved
+                        <i class="fa-solid fa-check"></i> {{ trans('forumium.resolved') }}
                     </span>
                 @endif
                 <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
@@ -28,7 +28,7 @@
                 </span>
                 @if($isPublic)
                     <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
-                        <i class="fa-solid fa-globe"></i> Public discussion
+                        <i class="fa-solid fa-globe"></i> {{ trans('forumium.public_discussion') }}
                     </span>
                 @endif
             </div>

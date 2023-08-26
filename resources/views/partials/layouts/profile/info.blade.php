@@ -10,13 +10,13 @@
             <i class="fa-regular fa-clock"></i> {{ $user->updated_at->diffForHumans() }}
         </span>
         <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
-            <i class="fa-solid fa-sign-in"></i> Joined {{ $user->created_at->diffForHumans() }}
+            <i class="fa-solid fa-sign-in"></i> {{ trans('forumium.joined') }} {{ $user->created_at->diffForHumans() }}
         </span>
         <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
-            <i class="fa-solid fa-check"></i> {{ $bestAnswers }} best {{ $bestAnswers > 1 ? 'answers' : 'answer' }}
+            <i class="fa-solid fa-check"></i> {{ $bestAnswers }} {{ trans_choice('forumium.best_answers', $bestAnswers) }}
         </span>
         <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
-            <i class="fa-solid fa-medal"></i> {{ $user->total_points }} {{ $user->total_points > 1 ? 'points' : 'point' }}
+            <i class="fa-solid fa-medal"></i> {{ $user->total_points }} {{ trans_choice('forumium.points', $user->total_points) }}
         </span>
     </div>
 </div>

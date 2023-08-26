@@ -10,7 +10,7 @@
         @endif
         @if($q)
             <span class="text-slate-700 font-medium text-sm">
-                Search for: {{ $q }}
+                {{ trans('forumium.search_for') }}: {{ $q }}
             </span>
         @endif
     </div>
@@ -22,9 +22,9 @@
         @else
             <span class="text-slate-700 font-medium text-sm">
                 @if($q)
-                    No discussions available for your current search! @if(auth()->user() && auth()->user()->hasVerifiedEmail()) Maybe you should start a new discussions. @endif
+                    {{ trans('forumium.no_discussions_available_for_your_current_search') }} @if(auth()->user() && auth()->user()->hasVerifiedEmail()) {{ trans('forumium.maybe_you_should_start_a_new_discussions') }} @endif
                 @else
-                    No discussions available for now! @if(auth()->user() && auth()->user()->hasVerifiedEmail()) Please come back later, or start a new discussion. @else Please come back later. @endif
+                    {{ trans('forumium.no_discussions_available_for_now') }} @if(auth()->user() && auth()->user()->hasVerifiedEmail()) {{ trans('forumium.please_come_back_later_or_start_a_new_discussion') }} @else {{ trans('forumium.please_come_back_later') }} @endif
                 @endif
             </span>
         @endif
@@ -33,7 +33,7 @@
         @if(!$disableLoadMore)
             <button type="button" wire:click="loadMore" wire:loading.attr="disabled"
                     class="bg-slate-100 disabled:bg-slate-50 px-3 py-2 text-slate-500 border-slate-100 rounded hover:cursor-pointer w-fit hover:bg-slate-200">
-                Load more
+                {{ trans('forumium.load_more') }}
             </button>
         @endif
         @if($totalCount)

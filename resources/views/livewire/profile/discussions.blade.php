@@ -1,9 +1,9 @@
 <div class="w-full flex flex-col">
     <div class="text-slate-700 text-lg flex items-center gap-2">
         @if(auth()->user()->id == $user->id)
-            Your discussions
+            {{ trans('forumium.your_discussions') }}
         @else
-            Discussions
+            {{ trans('forumium.discussions') }}
         @endif
         <div wire:loading><i class="fa fa-spinner fa-spin"></i></div>
     </div>
@@ -25,7 +25,7 @@
         @if(!$disableLoadMore)
             <button type="button" wire:click="loadMore" wire:loading.attr="disabled"
                     class="bg-slate-100 disabled:bg-slate-50 px-3 py-2 text-slate-500 border-slate-100 rounded hover:cursor-pointer w-fit hover:bg-slate-200">
-                Load more
+                {{ trans('forumium.load_more') }}
             </button>
         @endif
         @if($totalCount)

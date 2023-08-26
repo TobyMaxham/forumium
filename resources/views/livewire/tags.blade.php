@@ -12,7 +12,7 @@
                 <div class="w-full mb-2" style="height: 1px; background-color: rgba(0,0,0,.15);"></div>
                 <span class="flex justify-between items-center gap-2 items-center text-xs">
                     @php($discussions = $tag->discussions()->count())
-                    <span>View discussions @if($discussions) ({{ $discussions }}) @endif</span> <i class="fa-solid fa-arrow-right-long"></i>
+                    <span>{{ trans('forumium.view_discussions') }} @if($discussions) ({{ $discussions }}) @endif</span> <i class="fa-solid fa-arrow-right-long"></i>
                 </span>
             </a>
         @endforeach
@@ -20,10 +20,10 @@
         <div class="w-full flex flex-col justify-center items-center text-center gap-2 py-20">
             <i class="fa-regular fa-face-frown-open fa-2x mb-5"></i>
             <span class="px-3 text-slate-700 font-medium text-sm">
-                No tags available for now! Please come back later.
+                {{ trans('forumium.no_tags_available_for_now_please_come_back_later') }}
             </span>
             <a href="{{ route('home') }}" class="flex items-center gap-1 text-sm text-blue-500 hover:text-blue-600 px-3">
-                <i class="fa-solid fa-arrow-left"></i> Back to home
+                <i class="fa-solid fa-arrow-left"></i> {{ trans('forumium.back_to_home') }}
             </a>
         </div>
     @endif

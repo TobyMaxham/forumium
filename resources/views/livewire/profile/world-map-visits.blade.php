@@ -1,7 +1,7 @@
 <div class="w-full flex flex-col gap-3">
     @if($user && $user->id == auth()->user()->id && $user->discussionVisits()->count())
 
-        <span class="font-medium text-slate-700 text-lg">Visits presentation</span>
+        <span class="font-medium text-slate-700 text-lg">{{ trans('forumium.visits_presentation') }}</span>
 
         <div class="w-full">
             <div id="chartdiv"></div>
