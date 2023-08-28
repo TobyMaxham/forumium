@@ -3,7 +3,7 @@
         @if(auth()->user()->id == $user->id)
             {{ trans('forumium.your_comments') }}
         @else
-            {{ trans('forumium.comments') }}
+            {{ trans_choice('forumium.comments', 2) }}
         @endif
         <div wire:loading><i class="fa fa-spinner fa-spin"></i></div>
     </div>

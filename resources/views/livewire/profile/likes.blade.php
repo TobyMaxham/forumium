@@ -69,7 +69,7 @@
             @endforeach
         @else
             <span class="py-3 text-slate-700 font-medium text-sm">
-                You haven't liked any discussions, replies or comments yet.
+                {{ trans('forumium.you_havent_liked_discussions_replies_or_comments') }}
             </span>
         @endif
     </div>
@@ -77,7 +77,7 @@
         <div class="w-full flex justify-center items-center text-center mt-5">
             <button type="button" wire:click="loadMore" wire:loading.attr="disabled"
                     class="bg-slate-100 disabled:bg-slate-50 px-3 py-2 text-slate-500 border-slate-100 rounded hover:cursor-pointer w-fit hover:bg-slate-200">
-                Load more
+                {{ trans('forumium.load_more') }}
             </button>
         </div>
     @endif

@@ -24,7 +24,7 @@
                     </span>
                 @endif
                 <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">
-                    <i class="fa-regular fa-comments"></i> {{ $replies }} {{ $replies > 1 ? 'replies' : 'reply' }} / {{ $comments }} {{ $comments > 1 ? 'comments' : 'comment' }}
+                    <i class="fa-regular fa-comments"></i> {{ $replies }} {{ trans_choice('forumium.replies', $replies) }} / {{ $comments }} {{ trans_choice('forumium.comments', $comments) }}
                 </span>
                 @if($isPublic)
                     <span class="lg:flex lg:flex-row block justify-center lg:items-center items-start gap-2">

@@ -38,7 +38,7 @@
         @endif
         @if($totalCount)
             <span class="text-xs text-slate-600">
-                Showing {{ min($limitPerPage, $totalCount) }} of {{ $totalCount }} {{ $totalCount > 1 ? 'discussions' : 'discussion' }}
+                {{ trans_choice('forumium.showing_number_of_discussions', $totalCount, compact('limitPerPage', 'totalCount')) }}
             </span>
         @endif
     </div>

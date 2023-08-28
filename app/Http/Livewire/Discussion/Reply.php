@@ -42,7 +42,7 @@ class Reply extends Component implements HasForms
     {
         return [
             MentionsRichEditor::make('content')
-                ->label('Reply content')
+                ->label(trans('forumium.reply_content'))
                 ->mentionsItems(
                     User::all()
                         ->map(
@@ -65,14 +65,14 @@ class Reply extends Component implements HasForms
         if ($this->reply) {
             $this->reply->content = $data['content'];
             $this->reply->save();
-            $message = 'Reply updated successfully';
+            $message = trans('forumium.reply_updated_successfully');
         } else {
             ReplyModel::create([
                 'user_id' => auth()->user()->id,
                 'discussion_id' => $this->discussion->id,
                 'content' => $data['content']
             ]);
-            $message = 'Reply added successfully';
+            $message = trans('forumium.reply_added_successfully');
             dispatch(new DispatchNotificationsJob(auth()->user(), NotificationConstants::POST_IN_DISCUSSION->value, $this->discussion));
         }
         Filament::notify('success', $message);

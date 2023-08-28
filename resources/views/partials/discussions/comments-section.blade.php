@@ -1,7 +1,7 @@
 @if($showComments)
     <div class="w-full flex flex-col gap-2 mt-5">
         <span class="text-slate-700 text-lg">
-            {{ $comments }} {{ $comments > 1 ? 'Comments' : 'Comment' }}
+            {{ $comments }} {{ trans_choice('forumium.comments', $comments) }}
         </span>
         <div class="w-full flex flex-col gap-0 bg-slate-50 border-y border-slate-100">
             @if($model->comments->count())

@@ -43,7 +43,7 @@
                 </div>
             @endif
             <button type="button" wire:click="toggleComments()" class="flex items-center gap-2 hover:cursor-pointer toggle-comments">
-                <i class="fa-regular fa-comment"></i> {{ $comments }} {{ $comments > 1 ? 'Comments' : 'Comment' }}
+                <i class="fa-regular fa-comment"></i> {{ $comments }} {{ trans_choice('forumium.comments', $comments) }}
             </button>
             @if(
                 (auth()->user() && auth()->user()->hasVerifiedEmail()) &&

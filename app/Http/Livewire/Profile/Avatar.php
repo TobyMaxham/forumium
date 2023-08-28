@@ -37,7 +37,7 @@ class Avatar extends Component
         } else {
             $this->user->picture = str_replace('public/', '', $this->picture->store('public'));
             $this->user->save();
-            Filament::notify('success', 'Your profile picture was successfully updated', true);
+            Filament::notify('success', trans('forumium.your_profile_picture_was_successfully_updated'), true);
             $this->redirect(route('profile.index'));
         }
     }
@@ -46,18 +46,18 @@ class Avatar extends Component
     {
         Notification::make()
             ->warning()
-            ->title('Delete confirmation')
-            ->body('Are you sure you want to delete your profile picture?')
+            ->title(trans('forumium.delete_confirmation'))
+            ->body(trans('forumium.are_you_sure_to_delete_your_profile_pic'))
             ->actions([
                 Action::make('confirm')
-                    ->label('Confirm')
+                    ->label(trans('forumium.confirm'))
                     ->color('danger')
                     ->button()
                     ->close()
                     ->emit('doDeleteProfilePicture'),
 
                 Action::make('cancel')
-                    ->label('Cancel')
+                    ->label(trans('forumium.cancel'))
                     ->close()
             ])
             ->persistent()
@@ -68,7 +68,7 @@ class Avatar extends Component
     {
         $this->user->picture = null;
         $this->user->save();
-        Filament::notify('success', 'Your profile picture was successfully removed', true);
+        Filament::notify('success', trans('forumium.your_profile_picture_was_successfully_removed'), true);
         $this->redirect(route('profile.index'));
     }
 }

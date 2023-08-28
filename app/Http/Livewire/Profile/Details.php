@@ -35,10 +35,10 @@ class Details extends Component implements HasForms
             Textarea::make('bio')
                 ->label('Bio')
                 ->rows(4)
-                ->placeholder('Type a bio to your profile...'),
+                ->placeholder(trans('forumium.type_a_bio_to_your_profile')),
 
             Toggle::make('is_email_visible')
-                ->label('Make your email address visible on the forum')
+                ->label(trans('forumium.make_your_email_address_visible_on_the_forum'))
         ];
     }
 
@@ -49,6 +49,6 @@ class Details extends Component implements HasForms
         $this->user->is_email_visible = $data['is_email_visible'];
         $this->user->save();
         $this->user->refresh();
-        Filament::notify('success', 'Your notifications were successfully updated.');
+        Filament::notify('success', trans('forumium.your_notifications_were_successfully_updated'));
     }
 }

@@ -47,7 +47,7 @@
     </a>
     <a href="{{ route($routePrefix . '.comments', $routeParams) }}" class="lg:min-w-full min-w-[130px] lg:w-full w-fit lg:p-0 p-3 lg:bg-transparent lg:mb-5 mb-0 lg:border-y-0 border-y lg:border-r-0 border-r border-slate-200 flex lg:justify-start justify-center lg:text-left text-center items-center gap-1 {{ Route::is($routePrefix . '.comments') ? 'lg:text-blue-500 lg:bg-transparent text-white bg-blue-500' : 'lg:hover:text-blue-500 lg:text-slate-500 lg:hover:bg-transparent hover:bg-blue-500 hover:text-white' }}">
         <i class="fa-regular fa-comments"></i>
-        <span>{{ trans('forumium.comments') }}</span>
+        <span>{{ trans_choice('forumium.comments', 2) }}</span>
     </a>
     <a href="{{ route($routePrefix . '.likes', $routeParams) }}" class="lg:min-w-full min-w-[130px] lg:w-full w-fit lg:p-0 p-3 lg:bg-transparent lg:mb-5 mb-0 lg:border-y-0 border-y lg:border-r-0 border-r border-slate-200 flex lg:justify-start justify-center lg:text-left text-center items-center gap-1 {{ Route::is($routePrefix . '.likes') ? 'lg:text-blue-500 lg:bg-transparent text-white bg-blue-500' : 'lg:hover:text-blue-500 lg:text-slate-500 lg:hover:bg-transparent hover:bg-blue-500 hover:text-white' }}">
         <i class="fa-regular fa-thumbs-up"></i>

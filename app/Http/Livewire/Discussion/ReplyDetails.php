@@ -79,18 +79,18 @@ class ReplyDetails extends Component implements HasForms
     {
         Notification::make()
             ->warning()
-            ->title('Delete confirmation')
-            ->body('Are you sure you want to delete this reply?')
+            ->title(trans('forumium.delete_confirmation'))
+            ->body(trans('forumium.are_you_sure_you_want_to_delete_this_reply'))
             ->actions([
                 Action::make('confirm')
-                    ->label('Confirm')
+                    ->label(trans('forumium.confirm'))
                     ->color('danger')
                     ->button()
                     ->close()
                     ->emit('doDelete', ['reply' => $this->reply->id]),
 
                 Action::make('cancel')
-                    ->label('Cancel')
+                    ->label(trans('forumium.cancel'))
                     ->close()
             ])
             ->persistent()
@@ -116,12 +116,12 @@ class ReplyDetails extends Component implements HasForms
     {
         return [
             Textarea::make('content')
-                ->label('Comment content')
+                ->label(trans('forumium.comment_content'))
                 ->required()
                 ->rows(2)
-                ->placeholder('Type your comment here...')
-                ->helperText('You can write a comment containing up to 300 characters.')
-                ->maxLength(300)
+                ->placeholder(trans('forumium.type_your_comment_here'))
+                ->helperText( trans('forumium.you_can_write_a_comment_containing_up_to_char', ['value' => $i=300]))
+                ->maxLength($i)
         ];
     }
 
@@ -149,18 +149,18 @@ class ReplyDetails extends Component implements HasForms
     {
         Notification::make()
             ->warning()
-            ->title('Delete confirmation')
-            ->body('Are you sure you want to delete this comment?')
+            ->title(trans('forumium.delete_confirmation'))
+            ->body(trans('forumium.are_you_sure_you_want_to_delete_this_comment'))
             ->actions([
                 Action::make('confirm')
-                    ->label('Confirm')
+                    ->label(trans('forumium.confirm'))
                     ->color('danger')
                     ->button()
                     ->close()
                     ->emit('doDeleteReplyComment', ['comment' => $comment]),
 
                 Action::make('cancel')
-                    ->label('Cancel')
+                    ->label(trans('forumium.cancel'))
                     ->close()
             ])
             ->persistent()
@@ -192,7 +192,7 @@ class ReplyDetails extends Component implements HasForms
         }
         $this->comment->save();
         $this->emit('replyCommentSaved', $this->reply->id);
-        Filament::notify('success', 'Comment successfully saved.');
+        Filament::notify('success', trans('forumium.comment_successfully_saved'));
 
         if ($isCreation) {
             dispatch(new CalculateUserPointsJob(user: auth()->user(), source: $this->comment, type: PointsConstants::NEW_COMMENT->value));
